@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; text-align: center; }
+        .container { background: white; margin: 60px auto; padding: 40px; width: 60%;
+                     border-radius: 20px; box-shadow: 0 0 20px #aaa; }
+        input[type=file] { margin: 20px; font-size: 18px; }
+        input[type=submit] { background: #007BFF; color: white; border: none; padding: 15px 40px;
+                             font-size: 20px; border-radius: 15px; cursor: pointer; }
+        input[type=submit]:hover { background: #0056b3; }
+        img { width: 350px; border-radius: 15px; margin-top: 25px; }
+        .result { font-size: 24px; color: green; margin-top: 25px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Image Analyzer</h1>
+        <p>Upload an image to get its prediction:</p>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required><br>
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if filename %}
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+            <div class="result">
+                <b>Prediction:</b> {{ label }} ({{ prob }}% confidence)
+            </div>
+        {% endif %}
+
+        <br><br>
+        <a href="/dashboard">⬅ Back to Dashboard</a>
+    </div>
+</body>
+</html>

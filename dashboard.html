@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Image AI App</title>
+    <style>
+        body { font-family: Arial; background: linear-gradient(to right, #00c6ff, #0072ff); color: white; }
+        .container { text-align: center; margin-top: 80px; }
+        h1 { font-size: 45px; margin-bottom: 30px; }
+        .button-block { display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
+        .option-btn { background: #ff4081; color: white; border: none; padding: 25px 50px;
+                      border-radius: 20px; font-size: 22px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                      transition: 0.3s; width: 250px; }
+        .option-btn:hover { background: #f50057; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Welcome, {{ username }}!</h1>
+        <div class="button-block">
+            <a href="/upload"><button class="option-btn">📸 Upload & Analyze Image</button></a>
+            <a href="/about"><button class="option-btn">ℹ️ About App</button></a>
+            <a href="/logout"><button class="option-btn">🚪 Logout</button></a>
+        </div>
+    </div>
+</body>
+</html>
